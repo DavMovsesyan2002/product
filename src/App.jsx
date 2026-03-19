@@ -71,6 +71,14 @@ function App() {
     startIndex + PER_PAGE
   );
 
+  const handlePrevPage = () => {
+    setCurrentPage((page) => Math.max(page - 1, 1));
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage((page) => Math.min(page + 1, totalPages));
+  };
+
   return (
     <div className="min-h-screen bg-slate-100">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
@@ -113,8 +121,8 @@ function App() {
             <Pagination
               currentPage={currentPage}
               totalPages={totalPages}
-              onPrev={() => setCurrentPage((page) => page - 1)}
-              onNext={() => setCurrentPage((page) => page + 1)}
+              onPrev={handlePrevPage}
+              onNext={handleNextPage}
             />
           </>
         ) : (
