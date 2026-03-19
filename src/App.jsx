@@ -77,6 +77,13 @@ function App() {
     setCurrentPage((page) => Math.min(page + 1, totalPages));
   };
 
+  const handleClearFilters = () => {
+    setSearchValue('');
+    setSelectedCategory(ALL_CATEGORY);
+    setSelectedSort(SORT_DEFAULT);
+    setCurrentPage(1);
+  };
+
   return (
     <div className="min-h-screen bg-slate-100">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
@@ -96,6 +103,13 @@ function App() {
             value={selectedSort}
             onChange={setSelectedSort}
           />
+          <button
+            type="button"
+            onClick={handleClearFilters}
+            className="cursor-pointer rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50"
+          >
+            Clear Filter
+          </button>
         </div>
 
         {isLoading ? (
