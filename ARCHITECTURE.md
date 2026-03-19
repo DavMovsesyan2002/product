@@ -1,3 +1,13 @@
+## Requirements
+
+- Vite requires Node.js version 20.19+ or 22.12+. Please upgrade your Node.js version
+
+You can check your Node.js version:
+
+```bash
+node -v
+```
+
 # Architecture
 
 - Inputs like search, filter, and sort are in the Fields folder because they are all same fields. Product stuff like ProductCard and ProductModal are separate because they represent the main. Things like pagination, empty state and skeleton loaders are also separate so they can be reused and the code stays cleaner. 
