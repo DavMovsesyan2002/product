@@ -37,8 +37,6 @@ function App() {
       const data = await getProducts(signal);
       setProducts(data);
     } catch (error) {
-      if (error?.name === 'CanceledError') return;
-
       enqueueSnackbar('Failed to load products. Please try again.', {
         variant: 'error',
       });
